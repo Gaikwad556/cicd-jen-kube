@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        registry = "ssgaikwad/vprofileapp"
+        registry = 'kubeimran/vproappdock'
         registryCredentials = 'dockerhub'
     }
 
@@ -74,7 +74,7 @@ pipeline {
         stage('build Docker image') {
             steps {
                 script {
-                    docker image = docker.build(registry + ":V$BUILD_NUMBER")
+                    docker image = docker.build registry + ":V$BUILD_NUMBER"
                 }
             }
         }
